@@ -201,7 +201,7 @@ elif st.session_state.main_stage:
                 if recipe_info and recipe_info.get("image"):
                     img_path = recipe_info["image"]
                     if img_path and os.path.exists(img_path):
-                        st.image(use_column_width=True)
+                        st.image(img_path, use_column_width=True)
 
                 st.markdown(f"### {rec['name']}")
                 st.write(f"**보유 재료:** {', '.join(rec['have']) if rec['have'] else '없음'}")
@@ -232,4 +232,5 @@ elif st.session_state.main_stage:
             page_select()
     if __name__ == "__main__":
         main()
+
 
